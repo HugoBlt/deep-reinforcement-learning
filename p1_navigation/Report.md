@@ -51,6 +51,7 @@ Episode 772	Average Score: 15.05
 Environment solved in 672 episodes!	Average Score: 15.05
 ```
 
+### Plot Score 
 ![DDQN.png](Double_DQN.png)
 
 ## Next Step
