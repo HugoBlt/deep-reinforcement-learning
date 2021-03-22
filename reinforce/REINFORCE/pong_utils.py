@@ -3,9 +3,8 @@ import matplotlib
 import matplotlib.pyplot as plt
 import torch
 import numpy as np
-from JSAnimation.IPython_display import display_animation
 from matplotlib import animation
-from IPython.display import display
+from IPython.display import HTML, display
 import random as rand
 
 
@@ -34,6 +33,12 @@ def preprocess_batch(images, bkg_color = np.array([144, 72, 17])):
     return torch.from_numpy(batch_input).float().to(device)
 
 
+
+def display_animation(anim):
+    plt.close(anim._fig)
+    return HTML(anim.to_jshtml())
+
+
 # function to animate a list of frames
 def animate_frames(frames):
     plt.axis('off')
@@ -46,7 +51,7 @@ def animate_frames(frames):
     fanim = animation.FuncAnimation(plt.gcf(), \
         lambda x: patch.set_data(frames[x]), frames = len(frames), interval=30)
     
-    display(display_animation(fanim, default_mode='once'))
+    display(display_animation(fanim))
     
 # play a game and display the animation
 # nrand = number of random steps before using the policy
