@@ -6,8 +6,14 @@ The objectif was to train 20 agents to maintain theirs positions at the target l
 
 ## Model architecture
 
-We use a Deep Deterministic Policy Gradient (DDPG) to solve this task. 
-Where one DDQN has the following architecture : 
+We use a Deep Deterministic Policy Gradient (DDPG) to solve this task, enhance with replay buffer used to reduce correlations. Ornstein-Uhlenbeck noise is also introduced to the action to encourage exploration.
+
+DDPG is found to work very well with continuous action space.
+There are two neural networks, one actor and one critic. The actor network output actions with given states. The critic network implement Q-learning.
+Soft update frequently update the network but with small fraction of the weights and also helps to reduce correlations. During training, gradient clipping is also implemented into local critic model weights to avoid vanishing and exploding gradients.
+
+DDPG model has the following architecture : 
+
 
 ```
 Actor(
@@ -25,10 +31,12 @@ Critic(
 )
 ```
 
+The output layer for actor model has 4 nodes ranging between -1 to 1 therefore hyperbolic tangent is used for the activation function whereas critic model has only 1 node without activation function. Both models use batch normalization as well as Xavier uniform weight initialization.
+
 ## Hyperparameters
 
 ```
-# hyperparameters
+# Hyperparameters
 
 BUFFER_SIZE = int(1e5)  # replay buffer size
 BATCH_SIZE = 128        # minibatch size
@@ -48,6 +56,12 @@ SIGMA = 0.1              # Change the sigma Noise
 ## Training
 
 ```
+# Hyperparameters 
+n_episodes=300 
+max_t=1000
+
+# Score
+
 Episode 10	Average Score: 2.96
 Episode 20	Average Score: 6.81
 Episode 30	Average Score: 11.90
