@@ -62,7 +62,7 @@ Episode 109	Average Score: 30.31Environment solved in 109 episodes! Average scor
 ```
 
 ### Plot Score 
-![DDQN.png](DDQN.png)
+![Deep Deterministic Policy Gradient](DDPG.png)
 
 ## Next Step
 
