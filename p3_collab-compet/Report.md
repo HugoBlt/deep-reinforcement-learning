@@ -76,4 +76,6 @@ Environment solved in 688 episodes! Average score of 0.50
 
 ## Next Step
 
+* Tweaking what agent receives in order to add some symetry between the two agents and see if it can improve learning. 
 * Implement Football game.
+* Implement Environment in order to step up on Unity.
