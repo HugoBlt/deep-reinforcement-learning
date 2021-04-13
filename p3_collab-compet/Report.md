@@ -77,5 +77,11 @@ Environment solved in 688 episodes! Average score of 0.50
 ## Next Step
 
 * Tweaking what agent receives in order to add some symetry between the two agents and see if it can improve learning. 
+* [PPO implement to look](https://github.com/jcrudy/drlnd_p3)
+* [Prioritized Experience Replay](https://github.com/rlcode/per)
+
+
 * Implement Football game.
 * Implement Environment in order to step up on Unity.
+* [Asynchronous Actor-Critic Agents (A3C)](https://medium.com/emergent-future/simple-reinforcement-learning-with-tensorflow-part-8-asynchronous-actor-critic-agents-a3c-c88f72a5e9f2)
+* [Trust Region Policy Optimization (TRPO) and Proximal Policy Optimization (PPO)](https://medium.com/@sanketgujar95/trust-region-policy-optimization-trpo-and-proximal-policy-optimization-ppo-e6e7075f39ed)
